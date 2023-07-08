@@ -1,0 +1,23 @@
+repos:
+  -   repo: local
+      hooks:
+      -   id: pylint
+          name: pylint
+          entry: pylint
+          language: system
+          types: [python]
+          args:
+            [
+              "-rn", # Only display messages
+              "-sn", # Don't display the score
+              "--rcfile=H:/Users/basto/Documents/Basico do basico/clean-architecture/.pylintrc",
+              "--load-plugins=pylint.extensions.docparams", # Load the extension
+            ]
+  -   repo: local
+      hooks:
+        - id: requirements
+          name: requirements
+          entry: bash -c 'pip freeze > requirements.txt; git add requirements.txt'
+          language: system
+          pass_filenames: false
+          stages: [commit]
