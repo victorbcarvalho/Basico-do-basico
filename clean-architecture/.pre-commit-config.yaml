@@ -13,11 +13,9 @@ repos:
               "--rcfile=H:/Users/basto/Documents/Basico do basico/clean-architecture/.pylintrc",
               "--load-plugins=pylint.extensions.docparams", # Load the extension
             ]
-  -   repo: local
-      hooks:
-        - id: requirements
+      -   id: requirements
           name: requirements
-          entry: bash -c 'pip freeze > requirements.txt; git add requirements.txt'
+          entry: bash -c 'source clean-architecture/virtual-env/bin/activate; pip freeze > clean-architecture/requirements.txt; git add clean-architecture/requirements.txt'
           language: system
           pass_filenames: false
           stages: [commit]
