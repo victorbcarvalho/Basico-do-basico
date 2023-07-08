@@ -1,7 +1,6 @@
 **/__pycache__
 etl-env
 machine-learning-env
-.vscode
 deteccao-de-faces
 primeira-api-flask-env
 bot-env
@@ -9,3 +8,4 @@ bot-env
 Nova pasta
 dm_escola.parquet
 visao-computacional-env
+.env
